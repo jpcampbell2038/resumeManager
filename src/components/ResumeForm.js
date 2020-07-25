@@ -10,13 +10,13 @@ export default class ResumeForm extends React.Component {
         this.state = {
             studentName: props.resume ? props.resume.studentName : '',
             status: props.resume ? props.resume.status : '',
-            file: '',
+            file: props.resume ? props.resume.file : '',
             createdtAt: props.resume ? moment(props.resume.createdAt) : moment(),
             calenderFocused: false,
             error: ''
         };
     }
-
+    //
 
     onNameChange = (e) => {
         const studentName = e.target.value;
@@ -59,7 +59,7 @@ export default class ResumeForm extends React.Component {
         e.preventDefault();
 
         if (!this.state.studentName || !this.state.file) {
-            this.setState(() => ({ error: 'Please provide Name and File.' }));
+            this.setState(() => ({ error: 'Please provide Name, File and Graduation Date.' }));
         }
         else {
             this.setState(() => ({ error: '' }));
@@ -99,7 +99,6 @@ export default class ResumeForm extends React.Component {
                     <div>
                         <input
                             type="file"
-                            //value={this.state.file}
                             onChange={this.onFileChange}
                         />
                     </div>

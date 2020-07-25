@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ResumeForm from './ResumeForm';
-import { editResume } from '../actions/resumes';
+import { editResume, removeResume } from '../actions/resumes';
 
 const EditResumePage = (props) => {
     return (
@@ -13,6 +13,10 @@ const EditResumePage = (props) => {
                     props.history.push('/');
                 }}
             />
+            <button onClick={() => {
+                props.dispatch(removeResume({ resumeId: props.resume.resumeId }));
+                props.history.push('/');
+            }}>Remove</button>
         </div>
     );
 };

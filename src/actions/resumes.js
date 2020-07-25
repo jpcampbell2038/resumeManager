@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 // ADD_RESUME
 export const addResume = (
     {
-        file = React.createRef,
+        file = '',
         studentName = '',
         studentId = '',
         graduationDate = 0,

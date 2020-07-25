@@ -10,7 +10,7 @@ export default class ResumeForm extends React.Component {
         this.state = {
             studentName: props.resume ? props.resume.studentName : '',
             status: props.resume ? props.resume.status : '',
-            file: props.resume ? props.resume.file : React.createRef,
+            file: '',
             createdtAt: props.resume ? moment(props.resume.createdAt) : moment(),
             calenderFocused: false,
             error: ''
@@ -24,8 +24,15 @@ export default class ResumeForm extends React.Component {
     };
 
     onFileChange = (e) => {
-        const file = e.target.value;
-        this.setState(() => ({ file }));
+        e.preventDefault();
+        let reader = new FileReader();
+        let file = e.target.files[0];
+        reader.onloadend =() => {
+            this.setState({
+                file: file
+            });
+        }
+        reader.readAsDataURL(file);
     };
 
     onSelectChange = (e) => {
@@ -92,7 +99,7 @@ export default class ResumeForm extends React.Component {
                     <div>
                         <input
                             type="file"
-                            value={this.state.file}
+                            //value={this.state.file}
                             onChange={this.onFileChange}
                         />
                     </div>

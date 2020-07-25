@@ -19,7 +19,7 @@ const EditResumePage = (props) => {
 
 const mapStateToProps = (state, props) => {
     return {
-        resumes: state.resumes.find((resume) => resume.resumeId === props.match.params.id)
+        resume: state.resumes.find((resume) => resume.resumeId === props.match.params.id)
     };
 };
 

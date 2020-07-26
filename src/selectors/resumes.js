@@ -1,6 +1,9 @@
+import moment from 'moment';
+
 //Get Visible Resumes
 export default ( resumes, { text, sortBy, startDate, endDate } ) => {
     return resumes.filter((resume) => {
+        const createdAtMoment = moment(resume.createdAt);
         const startDateMatch = typeof startDate !== 'number' || resume.createdAt >= startDate;
         const endDateMatch = typeof endDate !== 'number' || resume.createdAt <= endDate;
         const textMatch = resume.studentName.toLowerCase().includes(text.toLowerCase());

@@ -15,8 +15,9 @@ export const sortByGradDate = () => ({
 });
 
 // SORT_BY_STATUS
-export const sortByStatus = () => ({
-    type: 'SORT_BY_STATUS'
+export const sortByStatus = (status) => ({
+    type: 'SORT_BY_STATUS',
+    status
 });
 
 // SET_START_DATE

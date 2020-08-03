@@ -5,7 +5,6 @@ const filtersReducerDefaultState = {
     sortBy: 'date',
     startDate: undefined,
     endDate: undefined,
-    status: '',
     gradDate: null
 };
 

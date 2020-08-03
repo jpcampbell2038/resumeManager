@@ -15,11 +15,11 @@ export default (state = resumeReducerDefaultState, action) => {
                     return{
                         ...resume,
                         ...action.updates
-                    }
+                    };
                 }
                 else {
                     return resume;
-                }
+                };
             });
         default: 
             return state;

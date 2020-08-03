@@ -7,7 +7,6 @@ const ResumeListItem = ({ resumeId, studentName, file, graduationDate, status, c
             <h3>Name: {studentName}</h3>
         </Link>
         <p>File: {file.name}</p>
-        <p>Grad Date: {graduationDate}</p>
         <p>Status: {status}</p>
         <p>Created at: {createdAt}</p>
     </div>

@@ -12,8 +12,8 @@ import { addResume, removeResume, editResume } from './actions/resumes';
 const store = configureStore();
 
 store.dispatch(addResume({ studentName: 'james', status: 'b', graduationDate: 1, createdAt: 1000 }));
-const resume2 = store.dispatch(addResume({ studentName: 'bandit', status: 'a', graduationDate: 2, createdAt: -1000 }));
-const resume3 = store.dispatch(addResume({ studentName: 'jim', status: 'c', graduationDate: 3, createdAt: 2000 }));
+store.dispatch(addResume({ studentName: 'bandit', status: 'a', graduationDate: 2, createdAt: -1000 }));
+store.dispatch(addResume({ studentName: 'jim', status: 'c', graduationDate: 3, createdAt: 2000 }));
 
 const state = store.getState();
 console.log(state);

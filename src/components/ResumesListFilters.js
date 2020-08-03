@@ -17,16 +17,12 @@ const ResumesListFilters = (props) => (
                 if (e.target.value === 'date') {
                     props.dispatch(sortByDate());
                 }
-                else if (e.target.value === 'graduationDate') {
-                    props.dispatch(sortByGradDate());
-                }
                 else if (e.target.value === 'status') {
                     props.dispatch(sortByStatus());
                 }
             }}
         >
             <option value={"date"}>Date</option>
-            <option value={"graduationDate"}>Graduation Date</option>
             <option value={"status"}>Status</option>
         </select>
     </div>
